@@ -1,0 +1,9 @@
+.logo-header {
+  color: #282828;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  border: 1px solid red;
+}
