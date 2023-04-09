@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-active {
+  color: #d2461c;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  width: 100%;
+  padding: 10px;
+  height: 50px;
+}
+
+.nav-style {
+  text-decoration: none;
+  margin-right: 60px;
+  color: black;
+}
+
+.nav-style.active {
+  text-decoration: none;
+  color: red;
+}
