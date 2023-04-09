@@ -1,0 +1,57 @@
+/* ImageSlider.css */
+
+/* Container for the slider */
+.slider-container {
+  position: relative;
+}
+
+/* Style for the slider dots */
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px; /* Set the desired margin top for the dots */
+}
+
+/* Style for each dot */
+.slick-dots li {
+  margin: 0 4px; /* Set the desired margin between dots */
+}
+
+/* Style for active dot */
+.slick-dots li.slick-active button:before {
+  color: #000; /* Set the color of the active dot */
+}
+
+/* Style for the slide image */
+.slick-slide img {
+  width: 100%; /* Set the width of the slide image to 100% */
+  height: auto; /* Set the height of the slide image to auto to maintain aspect ratio */
+}
+.dots-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px; /* Add padding as needed */
+}
+
+.text-container {
+  position: absolute; /* Set the text container as absolute */
+  top: 50%; /* Position from top 50% */
+  left: 50%; /* Position from left 50% */
+  font-size: 50px;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Translate to center both horizontally and vertically */
+  text-align: center; /* Center align the text */
+}
+
+.shop-button {
+  background-color: transparent; /* Set background color to transparent */
+  color: black; /* Change the text color of the button */
+  font-size: 18px; /* Change the font size of the button */
+  /* Add additional button styles as needed */
+}
