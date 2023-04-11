@@ -1,0 +1,19 @@
+.img_ourstory {
+  max-width: 100%;
+  height: auto;
+}
+
+.our {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.story {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
