@@ -1,0 +1,15 @@
+.text-happy {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 50px;
+  border-top: 1px solid black;
+}
+
+.icon {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 100px;
+}

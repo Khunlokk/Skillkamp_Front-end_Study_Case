@@ -1,0 +1,30 @@
+.NewSletter {
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+}
+
+.button {
+  padding: 10px 40px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 4px;
+}
+
+.input {
+  width: 20%;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-top: 25px;
+  margin-bottom: 100px;
+}
+
+.text-Join {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
