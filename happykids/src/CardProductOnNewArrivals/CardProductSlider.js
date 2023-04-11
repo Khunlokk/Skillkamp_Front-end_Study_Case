@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Product.css";
 
 const SliderCardProduct = () => {
   const [products, setProducts] = useState([]);
@@ -70,88 +71,99 @@ const SliderCardProduct = () => {
 
   return (
     <div>
-      <h1>New Arrivals</h1>
-      <div
-        style={{ display: "flex", overflowX: "scroll" }}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-      >
-        {products.map((product) => (
-          <div
-            key={product.id}
-            style={{
-              flex: "0 0 auto",
-              marginRight: "16px",
-              minWidth: "250px",
-              width: "250px",
-              height: "400px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-              padding: "16px",
-            }}
-          >
-            <img
-              src={product.media[0].url}
-              alt={product.name}
+      <div>
+        <div
+          style={{
+            display: "flex",
+            overflowX: "hidden",
+            overflowY: "hidden",
+            position: "relative",
+          }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+        >
+          {products.map((product) => (
+            <div
+              key={product.id}
               style={{
-                width: "100%",
-                height: "200px",
-                objectFit: "cover",
+                flex: "0 0 auto",
+                marginRight: "16px",
+                minWidth: "250px",
+                width: "250px",
+                height: "400px",
+                border: "1px solid #ccc",
                 borderRadius: "4px",
+                padding: "16px",
               }}
-            />
-            <h2
-              style={{ marginTop: "8px", fontSize: "18px", fontWeight: "bold" }}
             >
-              {product.name}
-            </h2>
-            <div>
-              {/* Render formattedPrice and formattedDiscountedPrice conditionally */}
-              {product.formattedPrice === product.formattedDiscountedPrice ? (
-                <p style={{ fontSize: "16px", color: "#666" }}>
-                  {product.formattedPrice}
-                </p>
-              ) : (
-                <div>
-                  <p
-                    style={{
-                      fontSize: "16px",
-                      color: "#666",
-                      textDecoration: "line-through",
-                    }}
-                  >
+              <img
+                src={product.media[0].url}
+                alt={product.name}
+                style={{
+                  width: "100%",
+                  height: "200px",
+                  objectFit: "cover",
+                  borderRadius: "4px",
+                }}
+              />
+              <h2
+                style={{
+                  marginTop: "8px",
+                  fontSize: "18px",
+                  fontWeight: "bold",
+                }}
+              >
+                {product.name}
+              </h2>
+              <div>
+                {/* Render formattedPrice and formattedDiscountedPrice conditionally */}
+                {product.formattedPrice === product.formattedDiscountedPrice ? (
+                  <p style={{ fontSize: "16px", color: "#666" }}>
                     {product.formattedPrice}
                   </p>
-                  <p
-                    style={{
-                      fontSize: "16px",
-                      color: "#666",
-                    }}
-                  >
-                    {product.formattedDiscountedPrice}
-                  </p>
-                </div>
-              )}
-            </div>
-            {product.ribbon && (
-              <span
-                style={{ fontSize: "14px", color: "red", fontWeight: "bold" }}
+                ) : (
+                  <div>
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        color: "#666",
+                        textDecoration: "line-through",
+                      }}
+                    >
+                      {product.formattedPrice}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        color: "#666",
+                      }}
+                    >
+                      {product.formattedDiscountedPrice}
+                    </p>
+                  </div>
+                )}
+                {product.ribbon && (
+                  <span className="span">{product.ribbon}</span>
+                )}
+              </div>
+
+              <button
+                onClick={() => handleAddToCart(product.id)}
+                className="product-card__button_home"
               >
-                {product.ribbon}
-              </span>
-            )}
-            <button
-              onClick={() => handleAddToCart(product.id)}
-              style={{ marginTop: "8px" }}
-            >
-              Add to Cart
-            </button>
-          </div>
-        ))}
+                Add to Cart
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
-      <div>
+      <div className="shop">
+        <button className="shop_button">Shop All</button>
+      </div>
+
+      {/* <div>
         <h2>Cart</h2>
         <ul>
           {cartItems.map((product) => (
@@ -163,7 +175,7 @@ const SliderCardProduct = () => {
         <p style={{ fontSize: "16px", color: "bl" }}>
           Total Price: ${formattedValue(totalPrice)}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
