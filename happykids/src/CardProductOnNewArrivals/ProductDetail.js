@@ -3,7 +3,7 @@ import { style } from "@mui/system";
 import styled from "styled-components";
 import React, { useState, useEffect } from "react";
 import "./Product.css";
-import SinglePage from "./SinglePage";
+import SinglePage from "./SInglePage";
 import { Link } from "react-router-dom";
 
 const API = "https://skillkamp-api.com/v1/api/products/details";

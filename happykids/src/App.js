@@ -7,7 +7,7 @@ import OurStory from "./Pages/OurStory";
 import Contact from "./Pages/Contact";
 import Error from "./Pages/Error";
 import ProductDetail from "./CardProductOnNewArrivals/ProductDetail";
-import SinglePage from "./CardProductOnNewArrivals/SinglePage";
+import SinglePage from "./CardProductOnNewArrivals/SInglePage";
 import Announcement from "./Components/Announcement";
 import BadgeCart from "./DataDisplay/BadgeCart";
 import Product from "./product";
