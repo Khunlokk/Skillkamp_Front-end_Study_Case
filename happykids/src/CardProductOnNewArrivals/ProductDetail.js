@@ -3,7 +3,8 @@ import { style } from "@mui/system";
 import styled from "styled-components";
 import React, { useState, useEffect } from "react";
 import "./Product.css";
-import SInglePage from "./SInglePage";
+import SinglePage from "./SinglePage";
+import { Link } from "react-router-dom";
 
 const API = "https://skillkamp-api.com/v1/api/products/details";
 
@@ -18,26 +19,11 @@ const ProductCard = ({ product, handleAddToCart }) => {
       />
       <h3 className="product-card__name">{product.name}</h3>
       <p>Price: {product.formattedPrice}</p>
+      <div>
+        <Link to={`${product.sku}`}>read more</Link>
+      </div>
       <button
         className="product-card__button"
-        onClick={() => handleAddToCart(product)}
-      >
-        Add to Cart
-      </button>
-    </div>
-  );
-};
-
-// Component for displaying product details
-const ProductDetail = ({ product, handleAddToCart }) => {
-  return (
-    <div className="product-detail">
-      <h3>{product.name}</h3>
-      <p>Price: {product.price}</p>
-      <p>Color: {product.color}</p>
-      <p>Size: {product.size}</p>
-      <button
-        className="product-detail__button"
         onClick={() => handleAddToCart(product)}
       >
         Add to Cart
@@ -88,14 +74,14 @@ const ProductPage = () => {
     fetchProducts();
   }, []);
 
-  const [productData, setProductData] = useState(null);
-  // Handle product click to display product details
-  const handleProductClick = (product) => {
-    setProduct(product);
-  };
-  const handleAddToCart = (product) => {
+  // const [productData, setProductData] = useState(null);
+  // // Handle product click to display product details
+  // const handleProductClick = (product) => {
+  //   setProduct(product);
+  // };
+  const handleAddToCart = (products) => {
     // Add logic for adding product to cart
-    console.log("Adding product to cart:", product.sku);
+    console.log("Adding product to cart:", products);
   };
 
   // const [productdata, setProductdata] = useState(null);
@@ -125,20 +111,45 @@ const ProductPage = () => {
         </div>
         <div className="product-list product-page">
           <div>
-            {products.map((product, index) => (
+            {products.map((products, index) => (
               <ProductCard
                 key={index}
-                product={product}
+                product={products}
                 handleAddToCart={handleAddToCart}
               />
             ))}
+            <div>
+              {/* Render formattedPrice and formattedDiscountedPrice conditionally */}
+              {products.formattedPrice === products.formattedDiscountedPrice ? (
+                <p style={{ fontSize: "16px", color: "#666" }}>
+                  {products.formattedPrice}
+                </p>
+              ) : (
+                <div>
+                  <p
+                    style={{
+                      fontSize: "16px",
+                      color: "#666",
+                      textDecoration: "line-through",
+                    }}
+                  >
+                    {products.formattedPrice}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: "16px",
+                      color: "#666",
+                    }}
+                  >
+                    {products.formattedDiscountedPrice}
+                  </p>
+                </div>
+              )}
+              {products.ribbon && (
+                <span className="span">{products.ribbon}</span>
+              )}
+            </div>
           </div>
-          {product && (
-            <ProductDetail
-              product={product}
-              handleAddToCart={handleAddToCart}
-            />
-          )}
         </div>
       </div>
       {/* <SInglePage productdata={productdata} /> */}

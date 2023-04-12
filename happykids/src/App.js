@@ -7,7 +7,7 @@ import OurStory from "./Pages/OurStory";
 import Contact from "./Pages/Contact";
 import Error from "./Pages/Error";
 import ProductDetail from "./CardProductOnNewArrivals/ProductDetail";
-import ProductContex from "./CardProductOnNewArrivals/ProductContex";
+import SinglePage from "./CardProductOnNewArrivals/SinglePage";
 import Announcement from "./Components/Announcement";
 import BadgeCart from "./DataDisplay/BadgeCart";
 import Product from "./product";
@@ -62,6 +62,7 @@ function App() {
           <Route path="/ShopCollection" element={<ProductDetail />} />
           <Route path="/OurStory" element={<OurStory />} />
           <Route path="/Contact" element={<Product />} />
+          <Route path="/ShopCollection/:sku" element={<SinglePage />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>
