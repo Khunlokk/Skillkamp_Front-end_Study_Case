@@ -50,8 +50,10 @@
 }
 
 .shop-button {
-  background-color: transparent; /* Set background color to transparent */
-  color: black; /* Change the text color of the button */
-  font-size: 18px; /* Change the font size of the button */
-  /* Add additional button styles as needed */
+  padding: 10px 30px;
+  background-color: transparent;
+  color: #282828;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #343a40;
 }
