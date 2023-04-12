@@ -74,8 +74,35 @@ function SinglePage() {
           <div className="detail_product">
             <h1>{product.name}</h1>
             <p>Description: {product.description}</p>
-            <p>Price: {product.formattedPrice}</p>
-            <p>Discounted Price: {product.formattedDiscountedPrice}</p>
+            <div>
+              {product.ribbon && <span className="span">{product.ribbon}</span>}
+              {/* Render formattedPrice and formattedDiscountedPrice conditionally */}
+              {product.formattedPrice === product.formattedDiscountedPrice ? (
+                <p style={{ fontSize: "16px", color: "#black" }}>
+                  {product.formattedPrice}
+                </p>
+              ) : (
+                <div>
+                  <p
+                    style={{
+                      fontSize: "16px",
+                      color: "#ccc",
+                      textDecoration: "line-through",
+                    }}
+                  >
+                    {product.formattedPrice}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: "16px",
+                      color: "black",
+                    }}
+                  >
+                    {product.formattedDiscountedPrice}
+                  </p>
+                </div>
+              )}
+            </div>
             <p>sku: {product.sku}</p>
             <p>
               Colors:
